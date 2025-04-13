@@ -28,7 +28,7 @@ function ensureAuthenticated(request:Request, response:Response, next:NextFuncti
         id: String(user_id),
         role,
     }
-    console.log(user_id)
+    
     return next()
 }
 // Será importada na rotas

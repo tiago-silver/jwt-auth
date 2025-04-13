@@ -16,7 +16,7 @@ class SessionsController {
     }
 
     if(username !== userFake.username || userpassword !== userFake.userpassword){
-      throw new AppError("Usuário e/ou senha incorretos!", 401)
+      throw new AppError("Usuário e/ou senha incorretos!", 400)
     }
 
     // Se tudo estiver corrtos, criar um token para o usuário
@@ -27,7 +27,7 @@ class SessionsController {
       subject: String(userFake.id)
     })
 
-    // Após criar o token do usuário, inseri na requisição pelas middlewares
+    // Após criar o token do usuário, inserir na requisição pelas middlewares
     return response.json({token})
   }
 }
